@@ -14,13 +14,61 @@
 
 <body>
 
+<h1 class="text-center text-success display-3 border border-bottom  ">Monthly Income and Expense Application</h1>
+<section class="container ">
+
+<div class="input-group mb-3">
+<input type="text" class="form-control" placeholder="" aria-label="Add an income" aria-describedby="button-addon2">
+ <button class="btn btn-inline-secondary bg-success text-light" type="button" id="button-addon2">Add</button>
+ </div>
+
+
+ <!-- ***  Second part of page -->
+
+
+ <form class="row g-3 border border rounded-3 mt-3 p-2">
+
+    <h5 class="display-4 text-center">The form Area</h5>
+    <div class="col-md-6">
+        <label for="choose" class="form-label">Expenses Area</label>
+        <select id="choose" class="form-select">
+          <option selected>Choose...</option>
+          <option>Invoice</option>
+          <option>Rent</option>
+          <option>Communication</option>
+          <option>Electricty</option>
+          <option>Other</option>
+        </select>
+      </div>
+      
+  <div class="col-md-6">
+        <label for="date-time" class="form-label">Date & Time</label>
+        <input type="datetime-local" class="form-control" id="date-time">
+      </div>
+  
+
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label"></label>
+        <input type="email" class="form-control" id="inputEmail4">
+      </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-success">Save</button>
+    </div>
+  </form>
 
 
 
+
+
+
+
+</section>
+   
+<!-- ***   -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
-
 
     <script src="./index.js"></script>
 </body>
