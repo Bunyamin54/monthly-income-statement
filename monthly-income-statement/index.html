@@ -14,12 +14,12 @@
 
 <body>
 
-<h1 class="text-center text-success display-3 border border-bottom  ">Monthly Income and Expense Application</h1>
-<section class="container ">
+<h1 class="text-center text-success display-3 border border-bottom shadow-sm ">Expense Application</h1>
+<section class="container">
 
-<div class="input-group mb-3">
-<input type="text" class="form-control" placeholder="" aria-label="Add an income" aria-describedby="button-addon2">
- <button class="btn btn-inline-secondary bg-success text-light" type="button" id="button-addon2">Add</button>
+<div class="input-group mb-4">
+<input type="text" class="form-control mt-3" placeholder="Add an income" aria-label="Add an income" aria-describedby="button-addon2">
+ <button class="btn btn-inline-secondary bg-success text-light mt-3 p-3" type="button" id="button-addon2">Add</button>
  </div>
 
 
@@ -30,9 +30,9 @@
 
     <h5 class="display-4 text-center text-success">The form Area</h5>
     <div class="col-md-6">
-        <label for="choose" class="form-label text-danger">Expenses Area</label>
-        <select id="choose" class="form-select">
-          <option selected>Choose...</option>
+        <label for="choose" class="form-label text-danger ">Expenses Area</label>
+        <select id="choose" class="form-select  text-success">
+          <option selected >Choose...</option>
           <option>Invoice</option>
           <option>Rent</option>
           <option>Communication</option>
@@ -43,13 +43,13 @@
       
   <div class="col-md-6">
         <label for="date-time" class="form-label text-danger">Date & Time</label>
-        <input type="datetime-local" class="form-control" id="date-time">
+        <input type="datetime-local" class="form-control text-success" id="date-time">
       </div>
   
 
       <div class="col-md-12">
         <label for="amount" class="form-label text-danger">Amount</label>
-        <input type="number" class="form-control" id="amount" placeholder="100 ₺">
+        <input type="text" class="form-control text-success" id="amount" placeholder ="100 ₺">
       </div>
 
     <div class="col-12 text-center">
@@ -57,12 +57,30 @@
     </div>
   </form>
 
+<section class="list-header">
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
 
 
 
-
-
-
+</section>
 </section>
    
 <!-- ***   -->
