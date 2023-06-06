@@ -28,9 +28,9 @@
 
  <form class="row g-3 border border rounded-3 mt-3 p-2">
 
-    <h5 class="display-4 text-center">The form Area</h5>
+    <h5 class="display-4 text-center text-success">The form Area</h5>
     <div class="col-md-6">
-        <label for="choose" class="form-label">Expenses Area</label>
+        <label for="choose" class="form-label text-danger">Expenses Area</label>
         <select id="choose" class="form-select">
           <option selected>Choose...</option>
           <option>Invoice</option>
@@ -42,17 +42,17 @@
       </div>
       
   <div class="col-md-6">
-        <label for="date-time" class="form-label">Date & Time</label>
+        <label for="date-time" class="form-label text-danger">Date & Time</label>
         <input type="datetime-local" class="form-control" id="date-time">
       </div>
   
 
-      <div class="col-md-6">
-        <label for="inputEmail4" class="form-label"></label>
-        <input type="email" class="form-control" id="inputEmail4">
+      <div class="col-md-12">
+        <label for="amount" class="form-label text-danger">Amount</label>
+        <input type="number" class="form-control" id="amount" placeholder="100 ₺">
       </div>
 
-    <div class="col-12">
+    <div class="col-12 text-center">
       <button type="submit" class="btn btn-success">Save</button>
     </div>
   </form>
