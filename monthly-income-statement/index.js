@@ -14,19 +14,20 @@ let jSonArr = []
 
 inputAddButton.addEventListener("click",() => {
 
+
    console.log(inputIncome.value);
 }) 
 
-saveButton.addEventListener("click", () => {
- 
+saveButton.addEventListener("click", (e) => {
+   e.preventDefault
    let jSonObj = {
 
-      dt : dateTime.value,
+      dt:dateTime.value,
       exp:expensesType.value,
-      amnt: amount.value
+      amnt:amount.value
    }
 
-   jSonObj.push(jSonArr)
-   console.log(jSonObj);
+   jSonArr.push(jSonObj)
+   console.log(jSonArr);
 })
 
