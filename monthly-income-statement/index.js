@@ -1,4 +1,15 @@
+//? Selectors
+
+//? Variables
+
+//?Events
+
+//? Functions
+
+
 // ***********  Variables **********
+
+
 
 let inputIncome = document.getElementById("add-income")
 let inputAddButton = document.getElementById("button-addon2")
