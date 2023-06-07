@@ -47,7 +47,8 @@ window.addEventListener("load", () => {
   //? localStroge'den harcama listesini okuyarak global dizimize saklıyoruz.
   harcamaListesi = JSON.parse(localStorage.getItem("harcamalar")) || []
 
-  harcamaListesi.forEach((h) => console.log(h))
+  //? harcama dizisinin icindeki objleri tek tek DOMa yaziyoruz.
+  harcamaListesi.forEach((harcama) => harcamayiDomaYaz(harcama))
 
   console.log(harcamaListesi)
   //? Tarih inputunu bugun deger ile yukle
@@ -93,7 +94,28 @@ const harcamayiDomaYaz = ({ id, miktar, tarih, alan }) => {
     <td>${tarih}</td>
     <td>${alan}</td>
     <td>${miktar}</td>
-    <td><i id=${id} class="fa-solid fa-trash-can text-danger"></i></td>
+    <td><i id=${id} class="fa-solid fa-trash-can text-danger"  type="button"></i></td>
   </tr>
   `
 }
+
+harcamaBody.addEventListener("click", (e) => {
+  // console.log(e.target)
+
+  //? Event bir sil butonundan geldi ise
+  if (e.target.classList.contains("fa-trash-can")) {
+    //? DOM'dan ilgili row'u sildik.
+    e.target.parentElement.parentElement.remove()
+
+    const id = e.target.id
+    console.log(id)
+
+    //? Dizideki ilgili objeyi sildik.
+    harcamaListesi = harcamaListesi.filter((harcama) => harcama.id != id)
+
+    //? Silinmis yeni diziyi Local Storage aktardik.
+    localStorage.setItem("harcamalar", JSON.stringify(harcamaListesi))
+    
+  
+  }
+})
