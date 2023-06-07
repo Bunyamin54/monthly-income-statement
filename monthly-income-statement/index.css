@@ -7,3 +7,12 @@
 .container{
     max-width: 600px;
 }
+
+
+tr.border th{
+border: 1px solid black;
+text-align: center;
+border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color)!important;
+
+
+}
