@@ -5,6 +5,8 @@ const ekleFormu = document.getElementById("ekle-formu")
 
 //? Sonuc tablosu
 const gelirinizTd = document.getElementById("geliriniz")
+const giderinizTd = document.getElementById("gideriniz")
+const kalanTd = document.getElementById("kalan")
 
 //? harcama formu
 const harcamaFormu = document.getElementById("harcama-formu")
@@ -13,8 +15,8 @@ const tarihInput = document.getElementById("tarih")
 const miktarInput = document.getElementById("miktar")
 
 //? Haracama Tablosu
-
 const harcamaBody = document.getElementById("harcama-body")
+const temizleBtn = document.getElementById("temizle-btn")
 
 //? Variables
 let gelirler = 0
@@ -78,13 +80,22 @@ harcamaFormu.addEventListener("submit", (e) => {
 
   harcamayiDomaYaz(yeniHarcama)
 
+  hesaplaVeGuncelle()
+
   //? Formdaki verileri sil
   harcamaFormu.reset()
   tarihInput.valueAsDate = new Date()
 })
 
 const hesaplaVeGuncelle = () => {
+  const giderler = harcamaListesi.reduce(
+    (toplam, harcama) => toplam + Number(harcama.miktar),
+    0
+  )
+
   gelirinizTd.innerText = gelirler
+  giderinizTd.innerText = giderler
+  kalanTd.innerText = gelirler - giderler
 }
 
 const harcamayiDomaYaz = ({ id, miktar, tarih, alan }) => {
@@ -115,7 +126,17 @@ harcamaBody.addEventListener("click", (e) => {
 
     //? Silinmis yeni diziyi Local Storage aktardik.
     localStorage.setItem("harcamalar", JSON.stringify(harcamaListesi))
-    
-  
+
+    //? her satir silindikten sonra yeni degerleri hesapla ve DOM'a yaz
+    hesaplaVeGuncelle()
   }
+})
+
+//? temizle butonına basildigi zaman calis
+temizleBtn.addEventListener("click", () => {
+  harcamaListesi = [] //? RAM'deki harcama listesini sil
+  gelirler = 0 //? RAM'deki gelirleri sil
+  localStorage.clear() //? local straoge'daki tüm verileri sil
+  harcamaBody.innerHTML = "" //? DOM'daki tüm harcamlar sil
+  hesaplaVeGuncelle() //? sonuc tablosundaki (DOM) gelirler, giderler ve kalan degerleri sil.
 })
