@@ -1,4 +1,4 @@
-//? Selectors
+
 
 //? Variables
 
@@ -9,7 +9,7 @@
 
 // ***********  Variables **********
 
-
+//? Selectors
 
 let inputIncome = document.getElementById("add-income")
 let inputAddButton = document.getElementById("button-addon2")
@@ -26,7 +26,7 @@ let jSonArr = []
 inputAddButton.addEventListener("click",() => {
 
 
-   console.log(inputIncome.value);
+ 
 }) 
 
 saveButton.addEventListener("click", (e) => {
