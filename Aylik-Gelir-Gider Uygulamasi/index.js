@@ -18,6 +18,10 @@ let gelirler = 0
   e.preventDefault() //? reload'u engeller
   gelirler  = gelirler + Number(gelirInput.value) //? string eklemeyi engelledik
 
+
+localStorage.setItem("gelirler", gelirler)
+
+
 // ? input degerini sifirladik 
   ekleFormu.reset()
   
@@ -26,6 +30,13 @@ let gelirler = 0
 hesaplaVeGuncelle()
 })
 
+//! sayfa her yuklendikten sonra calisan event 
+window.addEventListener("load", () => {
+
+gelirler =Number (localStorage.getItem("gelirler"))
+hesaplaVeGuncelle()
+
+})
 //? Functions
 const hesaplaVeGuncelle = () => {
 
