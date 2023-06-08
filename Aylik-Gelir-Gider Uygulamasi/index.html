@@ -19,6 +19,10 @@
       crossorigin="anonymous"
     />
   </head>
+  <div id="myid" class="form-control text-center">Choose Language</div>
+
+  <div id="myid" class="form-control text-center">Choose Language</div>
+
   <body>
     <header class="text-warning text-center display-5 my-4">
       Aylık Gider Uygulaması
@@ -122,6 +126,11 @@
         </button>
       </section>
     </main>
+    <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+    <script>
+       function loadGoogleTranslate() {
+       new google.translate.TranslateElement("myid")}
+    </script>
 
     <script src="index.js"></script>
   </body>
