@@ -132,11 +132,14 @@ harcamaBody.addEventListener("click", (e) => {
   }
 })
 
+
 //? temizle butonına basildigi zaman calis
 temizleBtn.addEventListener("click", () => {
-  harcamaListesi = [] //? RAM'deki harcama listesini sil
-  gelirler = 0 //? RAM'deki gelirleri sil
-  localStorage.clear() //? local straoge'daki tüm verileri sil
-  harcamaBody.innerHTML = "" //? DOM'daki tüm harcamlar sil
-  hesaplaVeGuncelle() //? sonuc tablosundaki (DOM) gelirler, giderler ve kalan degerleri sil.
+  if (confirm("Silmek istedigine emin misiniz?")) {
+    harcamaListesi = [] //? RAM'deki harcama listesini sil
+    gelirler = 0 //? RAM'deki gelirleri sil
+    localStorage.clear() //? local straoge'daki tüm verileri sil
+    harcamaBody.innerHTML = "" //? DOM'daki tüm harcamlar sil
+    hesaplaVeGuncelle() //? sonuc tablosundaki (DOM) gelirler, giderler ve kalan degerleri sil.
+  }
 })
